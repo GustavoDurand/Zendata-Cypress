@@ -25,12 +25,15 @@ describe('Dashboard Test', function(){
         cy.get('div > div> div>div>div>button:nth-child(2)').should('be.visible');//New Scan
         cy.get('div > div> div>div>div>button:nth-child(3)').should('be.visible');//Scheduled Scans
         cy.get('div > div> div>div>div>button:nth-child(4)').should('be.visible');//Single-run Scans
-        cy.get('[class="jss130"]').should('be.visible')// Title "Website Scanner"
-        cy.get('[class="MuiButton-label jss149"]').should('be.visible')//Button "Create a new scan"
-        cy.get('[class="MuiBox-root jss205 jss170"]').should('be.visible')//List of pages reports
-        cy.get('[class="MuiButton-label"]').should('be.visible').click()//User - Logout
+        cy.get('[class="jss130"]').should('be.visible');// Title "Website Scanner"
+        cy.get('[class="MuiButton-label jss149"]').should('be.visible');//Button "Create a new scan"
+        cy.get('[class="MuiBox-root jss205 jss170"]').should('be.visible');//List of pages reports
+        cy.get('[class="MuiButton-label"]').should('be.visible').click();//User - Logout
         cy.get('div >div>ul>li').should('be.visible');//User - Logout
-        cy.get('#user-menu > div:nth-child(1)').click()//User - Logout
+        cy.get('#user-menu > div:nth-child(1)').click();//User - Logout
     })
+    after(() => {
+
+    });
     
 })

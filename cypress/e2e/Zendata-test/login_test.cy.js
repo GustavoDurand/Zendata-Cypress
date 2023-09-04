@@ -17,7 +17,7 @@ describe('Login Zendata', function (){
   it('Validar acceso', () => {
     cy.get('[placeholder="johndoe@zendata.dev"]').type('gustavodurandd@gmail.com').should('be.visible'); //type user)
     cy.get('[placeholder="********"]').type('Gjde2112.').should('be.visible');//type password and login
-    cy.get('div >  div  > form > button').click()//click on button "Sign In"
+    cy.get('div >  div  > form > button').click();//click on button "Sign In"
         
   })
   after(() => {
