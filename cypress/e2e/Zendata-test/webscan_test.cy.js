@@ -7,7 +7,7 @@ describe('Website Scan Test', function(){
     })
 
     it('Create a New Scan',() =>{
-        cy.get('').click();
+        cy.get('.jss147 > .MuiButtonBase-root > .MuiButton-label').click();
 
 
     })
