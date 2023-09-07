@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "cypress open",
-    "build": "npm run build",
-    // Otros scripts aquí
+    "build": "npm run build"
     }
     
   },
