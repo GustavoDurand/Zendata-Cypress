@@ -27,4 +27,7 @@ describe('Website Scan Test', function(){
         cy.get('.jss288 > .MuiButtonBase-root > .MuiButton-label').click();// send scan
 
     })
+    after(() => {
+
+    });
 })
