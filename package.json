@@ -6,9 +6,9 @@
   "scripts": {
     "test": "cypress open",
     "build": "npm run build"
-    }
+    },
     
-  },
+  
   "repository": {
     "type": "git",
     "url": "Zendata"
