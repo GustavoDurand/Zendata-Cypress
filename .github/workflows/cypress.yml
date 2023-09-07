@@ -25,7 +25,7 @@ jobs:
       run: npm install
 
     - name: Construye la aplicación
-      run: npm run build  # Reemplaza con el comando de construcción adecuado para tu proyect
+      run: npm run build  # Reemplaza con el comando de construcción adecuado para tu proyecto cy
 
     - name: Ejecuta pruebas de Cypress
       run: npm run cypress:open
