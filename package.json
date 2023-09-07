@@ -4,7 +4,11 @@
   "description": "e2e test",
   "main": "index.js",
   "scripts": {
-    "test": "cypress open"
+    "test": "cypress open",
+    "build": "npm run build",
+    // Otros scripts aquí
+    }
+    
   },
   "repository": {
     "type": "git",
