@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "cypress open",
-    "build": "npm run build"
+    "build": "npm run build",
+    "cypress:open": "cypress open",
+    "runcloud":"npx cypress run --record --key 4a40f361-97d1-47e5-b817-218009e87d1f"
     },
     
   
