@@ -1,17 +1,31 @@
-name: Cypress Tests
+name: Pruebas Cypress
 
-on: push
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  cypress-run:
-    runs-on: ubuntu-22.04
+  cypress:
+    runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
-      - name: Cypress run
-        uses: cypress-io/github-action@v6
-        with:
-          build: npm run build
-          start: npm start
+    - name: Checkout código fuente
+      uses: actions/checkout@v2
+
+    - name: Configura Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - name: Instala dependencias
+      run: npm install
+
+    - name: Construye la aplicación
+      run: npm run build  # Reemplaza con el comando de construcción adecuado para tu proyecto
+
+    - name: Ejecuta pruebas de Cypress
+      run: npm run cypress:open

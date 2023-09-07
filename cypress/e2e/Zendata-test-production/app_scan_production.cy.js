@@ -29,7 +29,7 @@ describe('APP Scan Test', function(){
         cy.get('#weglot-language-en').should('be.visible');// Language
         cy.get('[placeholder="Type the name"]').should('be.visible').type("audible");//app to scan field
         cy.wait(4000);
-        cy.get('#root > div > main > div > div > div.MuiBox-root.jss278.empty-overlay-container.jss136 > div > div > div.MuiBox-root.jss285.jss116 > div > div > form > div > div:nth-child(2) > div:nth-child(2) > div.jss378 > div.jss376 > div:nth-child(1)').should('be.visible').click();
+        cy.get('.jss307 > :nth-child(1)').should('be.visible').click();
         
         cy.get(':nth-child(2) > .MuiBox-root > .MuiButtonBase-root > .MuiButton-label').should('be.visible').click();//create scan
     });
