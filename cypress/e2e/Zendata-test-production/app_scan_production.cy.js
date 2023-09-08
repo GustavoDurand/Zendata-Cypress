@@ -2,8 +2,7 @@ describe('APP Scan Test', function(){
 
     beforeEach(function(){
         cy.visit('https://app.zendata.dev/login'); // comando
-        cy.get('[placeholder="johndoe@zendata.dev"]').type('gustavodurandd@gmail.com').should('be.visible'); //type user)
-        cy.get('[placeholder="********"]').type('Gjde2112.{enter}').should('be.visible');//type password and login
+        cy.typeLogin('gustavodurandd@gmail.com', 'Gjde2112.')
         cy.request({
         method: 'GET',
         url: 'https://api.zendata.dev/scans/?isDemo=true&pageSize=6&page=1&status=succesfully&environment=web',
@@ -29,8 +28,7 @@ describe('APP Scan Test', function(){
         cy.get('#weglot-language-en').should('be.visible');// Language
         cy.get('[placeholder="Type the name"]').should('be.visible').type("audible");//app to scan field
         cy.wait(4000);
-        cy.get('.jss307 > :nth-child(1)').should('be.visible').click();
-        
+        cy.get('[class^=jss]').eq(25).should('be.visible').click();
         cy.get(':nth-child(2) > .MuiBox-root > .MuiButtonBase-root > .MuiButton-label').should('be.visible').click();//create scan
     });
 
