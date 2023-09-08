@@ -28,7 +28,7 @@ describe('APP Scan Test', function(){
         cy.get('#weglot-language-en').should('be.visible');// Language
         cy.get('[placeholder="Type the name"]').should('be.visible').type("audible");//app to scan field
         cy.wait(4000);
-        cy.get('[class^=jss]').eq(25).should('be.visible').click();
+        cy.get('[class^=jss]').eq(24).should('be.visible').click();
         cy.get(':nth-child(2) > .MuiBox-root > .MuiButtonBase-root > .MuiButton-label').should('be.visible').click();//create scan
     });
 
