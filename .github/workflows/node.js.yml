@@ -5,22 +5,28 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ "master" ]
+    branches:
+      - master
   pull_request:
-    branches: [ "master" ]
+    branches:
+      - master
 
 jobs:
   cypress:
     runs-on: ubuntu-latest
 
     steps:
-     - name: Configura Node.js
+    - name: Checkout código fuente
+      uses: actions/checkout@v2
+
+    - name: Configura Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '14'
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm run test
-    
+
+    - name: Instala dependencias
+      run: npm ci
+
+    - name: Ejecuta pruebas
+      run: npm run test
