@@ -1,38 +1,31 @@
-name: Create PR - develop -> main
+name: Pruebas Cypress
 
-# run this workflow only
-# when a pull request to "develop" branch is closed
 on:
-  pull_request:
-    types: [closed]
+  push:
     branches:
-      - develop
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
-    pull-request:
-      runs-on: ubuntu-latest
-      steps:
-      # using v1 as repo-sync/pull-request recommends
-      # https://github.com/repo-sync/pull-request/issues/14
-      # https://github.com/actions/checkout
-      - uses: actions/checkout@v1
+  cypress:
+    runs-on: ubuntu-latest
 
-      # https://github.com/repo-sync/pull-request
-      # if the pull request has been successfully merged, then create
-      # a PR to "main" branch
-      - name: pull-request
-        uses: repo-sync/pull-request@v2
-        if: github.event.pull_request.merged == true
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          # be explicit about branches
-          source_branch: "develop"
-          destination_branch: "main"
-          pr_title: "develop to main auto PR"
-          pr_body: ":robot: Automated PR from **develop** to **main**"
-          pr_label: "auto-pr"
+    steps:
+    - name: Checkout código fuente
+      uses: actions/checkout@v2
+
+    - name: Configura Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - name: Instala dependencias
+      run: npm install
+
     - name: Construye la aplicación
-      run: npm run build  # Reemplaza con el comando de construcción adecuado para tu proyect
+      run: npm run build  # Reemplaza con el comando de construcción adecuado para tu proyecto
 
     - name: Ejecuta pruebas de Cypress
       run: npm run cypress:open
