@@ -34,23 +34,17 @@ it('Incorrect User', function(){
     cy.get('[placeholder="********"]').type(this.credentials.wrongpassword);
     cy.get('div >  div  > form > button').click();
 
-    cy.get('[class="MuiBox-root jss42"]').should('contains.text', 'Unable to log in with provided credentials.')//Message incorrect credentials
+    cy.get('[class="MuiBox-root jss42"]').should('contains.text', 'Unable to log in with provided credentials.');//Message incorrect credentials
 })
 
 it('Reset Password', function(){
-  cy.get(':nth-child(4) > .jss19').click()//forgot password button
-  cy.get('.jss8').should('be.visible')//title Reset Password
-  cy.get('.jss9').should('be.visible')//text description
-  cy.get('.MuiInputBase-root').type(this.credentials.email)
+  cy.get(':nth-child(4) > .jss19').click();//forgot password button
+  cy.get('.jss8').should('be.visible');//title Reset Password
+  cy.get('.jss9').should('be.visible');//text description
+  cy.get('.MuiInputBase-root').type(this.credentials.email);
   cy.get('[type="submit"]').should('be.visible').click();//button submit
-  cy.get('.jss8').should('be.visible')//title and text
-  cy.get('.jss9').should('be.visible')
-})
+  cy.get('.jss8').should('be.visible');//title and text
+  cy.get('.jss9').should('be.visible');
+  });
 
-it('Sign Up', function(){
-
-  cy.get('[href="https://www.zendata.dev/pricing"]').click()
-
-})
-
-})
+});

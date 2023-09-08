@@ -24,9 +24,5 @@ describe('Website Scan Test', function(){
         cy.get('.jss288 > .MuiButtonBase-root > .MuiButton-label').should('be.visible');//button send scan
         cy.get('.jss151 > .MuiButton-label').should('exist').should('be.visible');
         cy.get('.jss288 > .MuiButtonBase-root > .MuiButton-label').click();// send scan
-
-    })
-    after(() => {
-
     });
 })
