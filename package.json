@@ -7,10 +7,9 @@
     "test": "cypress open",
     "build": "npm run build",
     "cypress:open": "cypress open",
-    "runcloud":"npx cypress run --record --key 4a40f361-97d1-47e5-b817-218009e87d1f"
-    },
-    
-  
+    "runcloud": "npx cypress run --record --key 4a40f361-97d1-47e5-b817-218009e87d1f",
+    "cypress:runChrome": "cypress run --browser chrome"
+  },
   "repository": {
     "type": "git",
     "url": "Zendata"
@@ -24,7 +23,7 @@
   "author": "gustavo durand",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^13.1.0"
-    
+    "cypress": "^13.1.0",
+    "cypress-mochawesome-reporter": "^3.6.0"
   }
 }

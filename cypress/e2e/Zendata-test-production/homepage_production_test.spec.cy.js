@@ -10,7 +10,7 @@ describe('Dashboard Test', function(){
         cy.get(':nth-child(5) > .dropdown-trigger > div.navigation-item').should('be.visible')//Resources
         cy.get('.menu > :nth-child(6) > .navigation-item').should('be.visible')//Get started
         cy.get('.text-login').should('be.visible')//Client Login
-        cy.get('.div-block-10 > .green-button')//Try it button
+        cy.get('.div-block-10 > .green-button').should('be.visible')//Try it button
         cy.get('#email-form').should('be.visible')//Form contac
         cy.get('.footer-menu > :nth-child(3) > .navigation-item').should('be.visible')//Privacy Police
         cy.get(':nth-child(7) > .navigation-item').should('be.visible')//Terms and conditions
