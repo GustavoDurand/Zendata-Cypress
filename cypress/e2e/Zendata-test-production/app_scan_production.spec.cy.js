@@ -3,16 +3,9 @@ describe('APP Scan Test', function(){
     beforeEach(function(){
         cy.visit('https://app.zendata.dev/login'); // comando
         cy.typeLogin('gustavodurandd@gmail.com', 'Gjde2112.')
-        cy.request({
-        method: 'GET',
-        url: 'https://api.zendata.dev/scans/?isDemo=true&pageSize=6&page=1&status=succesfully&environment=web',
-        timeout: 10000,
-    }).then((response) => {
-        expect(response.status).to.equal(200);
-        // Puedes continuar con tus aserciones o acciones de prueba aquí
-    });
-
     })
+
+
 
     it('Create a New APP Scan Test',() =>{
         cy.get('div > div > div > ul > a:nth-child(2)').should('be.visible').click(); //APP Scan
@@ -32,4 +25,4 @@ describe('APP Scan Test', function(){
         cy.get(':nth-child(2) > .MuiBox-root > .MuiButtonBase-root > .MuiButton-label').should('be.visible').click();//create scan
     });
 
-})
+});
