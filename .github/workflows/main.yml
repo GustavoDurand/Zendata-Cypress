@@ -1,7 +1,6 @@
 name: Pruebas Cypress
-on:
-  schedule:
-  - cron: "0 12 * * 1-5"
+on: [push]
+
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
