@@ -1,5 +1,7 @@
 name: Pruebas Cypress
-on:  [push]
+on:   
+  schedule:
+  - cron: "0 12 * * 1-5"
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
@@ -9,4 +11,4 @@ jobs:
       - name: Cypress.io
         uses: cypress-io/github-action@v6.3.0
         with:
-          start: npm run cypress:runChrome
+          start: npm run run-all 
