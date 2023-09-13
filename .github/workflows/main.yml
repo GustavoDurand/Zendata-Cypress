@@ -1,5 +1,7 @@
 name: Pruebas Cypress
-on:  [push] 
+on:
+  schedule:
+  - cron: "0 12 * * 1-5"
 
 jobs:
   cypress-run:
@@ -10,4 +12,4 @@ jobs:
       - name: Cypress.io
         uses: cypress-io/github-action@v6.3.0
         with:
-          start: npm run run-all 
+          start: npx cypress run --record --key 4a40f361-97d1-47e5-b817-218009e87d1f
