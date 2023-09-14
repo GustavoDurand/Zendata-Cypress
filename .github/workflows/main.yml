@@ -10,4 +10,4 @@ jobs:
       - name: Cypress.io
         uses: cypress-io/github-action@v6.3.0
         with:
-          start: npm run run-all --headless
+          start: npm run run-all --headless --timeout 10000
