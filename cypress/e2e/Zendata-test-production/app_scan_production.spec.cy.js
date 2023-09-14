@@ -8,9 +8,9 @@ describe('APP Scan Test', function(){
 
 
     it('Create a New APP Scan Test',() =>{
+        cy.wait(15000)
         cy.get('div > div > div > ul > a:nth-child(2)').should('be.visible').click(); //APP Scan
         cy.get('[aria-controls="scan-menu"]').should('be.visible').click();// Create a new scan button
-        cy.wait(10000)
         cy.get('.jss130').should('be.visible');// title "APP Scanner"
         cy.get('.MuiTypography-h2').should('be.visible');// Text mobile asset monitoring
         cy.get('.MuiFormGroup-root > :nth-child(1) > .MuiTypography-root').should('exist');//app type buttons
