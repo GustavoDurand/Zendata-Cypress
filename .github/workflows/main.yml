@@ -1,4 +1,3 @@
-Copy code
 name: Pruebas Cypress
 on: [push]
 
