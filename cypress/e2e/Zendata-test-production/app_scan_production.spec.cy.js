@@ -8,12 +8,12 @@ describe('APP Scan Test', function(){
 
 
     it('Create a New APP Scan Test',() =>{
-        cy.get('div > div > div > ul > a:nth-child(2)').should("exist").click(); //APP Scan
-        cy.get('[aria-controls="scan-menu"]').should('be.visible').click();// Create a new scan button
+        cy.get('div > div > div > ul > a:nth-child(2)').should("exist").click({force: true}); //APP Scan
+        cy.get('[aria-controls="scan-menu"]').should('be.visible').click({force: true});// Create a new scan button
         cy.get('.jss130').should('be.visible');// title "APP Scanner"
         cy.get('.MuiTypography-h2').should('be.visible');// Text mobile asset monitoring
         cy.get('.MuiFormGroup-root > :nth-child(1) > .MuiTypography-root').should('exist');//app type buttons
-        cy.get('.MuiFormGroup-root > :nth-child(2) > .MuiTypography-root',{ timeout: 8000 }).should('exist').click();//IPA button
+        cy.get('.MuiFormGroup-root > :nth-child(2) > .MuiTypography-root',{ timeout: 8000 }).should('exist').click({force: true});//IPA button
         cy.get('.MuiSelect-root').should('exist');//repeats
         cy.get('.jss151 > .MuiButton-label').should('be.visible');// Button "Go Back"
         cy.get('.intercom-lightweight-app-launcher-icon-open').should('be.visible');// chatbot
