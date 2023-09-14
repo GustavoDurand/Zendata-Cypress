@@ -6,6 +6,7 @@ describe('Website Scan Test', function(){
     })
 
     it('Create a New Scan',() =>{
+        cy.wait(8000)
         cy.get('.jss147 > .MuiButtonBase-root > .MuiButton-label').click();//Create a new scan button
         cy.get('.MuiTypography-h2').should('exist'); //Title Website Scanner
         cy.get('.jss260 > .MuiBox-root > :nth-child(2)').should('be.visible');// text #1
