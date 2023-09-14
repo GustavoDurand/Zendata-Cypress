@@ -1,6 +1,6 @@
 name: Pruebas Cypress
-on:
-  schedule: [push]
+on: [push]
+
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
