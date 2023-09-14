@@ -1,3 +1,4 @@
+Copy code
 name: Pruebas Cypress
 on: [push]
 
@@ -11,3 +12,11 @@ jobs:
         uses: cypress-io/github-action@v6.3.0
         with:
           start: npm run run-all --headless --timeout 10000
+      - name: Enviar resultado a Slack
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: |
+          curl -X POST -H 'Content-type: application/json' --data '{
+            "text": "Automation Test Results:\n\n'"${{ job.status }}"'",
+            "channel": "#nombre-del-canal"  // Reemplaza con el nombre de tu canal en Slack
+          }' $SLACK_WEBHOOK_URL
