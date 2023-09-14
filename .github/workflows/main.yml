@@ -17,5 +17,5 @@ jobs:
         run: |
           curl -X POST -H 'Content-type: application/json' --data '{
             "text": "Automation Test Results:\n\n'"${{ job.status }}"'",
-            "channel": "#Gustavo Durand"  // Reemplaza con el nombre de tu canal en Slack
+            "channel": "@Gustavo Durand"
           }' $SLACK_WEBHOOK_URL
