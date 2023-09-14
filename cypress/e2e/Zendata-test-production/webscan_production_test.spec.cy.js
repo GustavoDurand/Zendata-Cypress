@@ -17,8 +17,7 @@ describe('Website Scan Test', function(){
         cy.get('.jss230 > .MuiFormControl-root > .MuiInputBase-root > .MuiInputBase-input').type('https://www.zendata.dev/').should('be.visible');//Type the URL to Scan
         cy.get('.jss259 > :nth-child(4)').should('exist');//search sub pages button
         cy.get(':nth-child(5) > .jss231 > .MuiTypography-root').should('exist');//repeats text
-        cy.get('.MuiSelect-root').click({force: true}).should('be.visible');//List of times
-        cy.get('.Mui-selected').click({force: true}).should('be.visible');//Select never
+        cy.get('#root > div > main > div > div > div.MuiBox-root.jss141.empty-overlay-container.jss136 > div > div > div.MuiBox-root.jss155.jss116 > div > div > form > div > div:nth-child(5) > div.jss230 > div').should('be.visible');//List of times
         cy.get('.-with-margin > .jss231 > .MuiTypography-root').should('exist');//text countries
         cy.get('.MuiAutocomplete-endAdornment > .MuiButtonBase-root > .MuiIconButton-label > .MuiSvgIcon-root').click().should('be.visible');//List of countries
         cy.contains('United States').click({force: true});//select a countrie
