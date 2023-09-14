@@ -17,5 +17,5 @@ jobs:
         run: |
           curl -X POST -H 'Content-type: application/json' --data '{
             "text": "Automation Test Results:\n\n'"${{ job.status }}"'",
-            "channel": "@Gustavo Durand"
+            "channel": "@GustavoDurand"
           }' $SLACK_WEBHOOK_URL
