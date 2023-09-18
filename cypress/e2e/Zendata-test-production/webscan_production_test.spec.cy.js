@@ -23,6 +23,6 @@ describe('Website Scan Test', function(){
         cy.contains('United States').click({force: true});//select a countrie
         cy.get('.jss288 > .MuiButtonBase-root > .MuiButton-label').should('be.visible');//button send scan
         cy.get('.jss151 > .MuiButton-label').should('exist').should('be.visible');
-        //cy.get('.jss288 > .MuiButtonBase-root > .MuiButton-label').click({force: true});// send scan
+        cy.get('.jss288 > .MuiButtonBase-root > .MuiButton-label').click({force: true});// send scan
     });
 })
