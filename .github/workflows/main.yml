@@ -25,5 +25,6 @@ jobs:
         run: |
           curl -X POST -H 'Content-type: application/json' --data '{
             "text": "Automation Test Results:\n\nWorkflow ${{ github.workflow }} completed with status: ${{ job.status }}",
-            "channel": "@GustavoDurand"
+            "user": "@GustavoDurand"
           }' $SLACK_WEBHOOK_URL
+          
