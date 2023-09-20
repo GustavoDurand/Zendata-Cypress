@@ -18,7 +18,7 @@ describe('APP Scan Test', function(){
         cy.get('.jss151 > .MuiButton-label').should('be.visible');// Button "Go Back"
         cy.get('.intercom-lightweight-app-launcher-icon-open').should('be.visible');// chatbot
         cy.get('#weglot-language-en').should('be.visible');// Language
-        cy.get('[placeholder="Type the name"]').should('be.visible').type("audible");//app to scan field
+        cy.get('[placeholder="Type the name"]').should('be.visible').type("youtube");//app to scan field
         cy.wait(4000);
         cy.get('[class^=jss]').eq(24).should('be.visible').click();
         cy.get(':nth-child(2) > .MuiBox-root > .MuiButtonBase-root > .MuiButton-label').should('be.visible').click();//create scan
