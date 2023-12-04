@@ -24,7 +24,7 @@
   "author": "gustavo durand",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^13.1.0",
+    "cypress": "^13.6.0",
     "cypress-mochawesome-reporter": "^3.6.0"
   }
 }
